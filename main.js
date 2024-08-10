@@ -53,7 +53,12 @@ const shop = document.getElementById("shop");
 function drawShop() {
     shop.innerHTML="";
     for(let i = 0; i < game.shopItems.length; i++) {
-        shop.innerHTML+=`<button data-id=${i}>${game.shopItems[i].name} ${game.shopItems[i].owned}</button>`
+        shop.innerHTML+=`<button class="shop-item" data-id=${i}>
+        <span class="shop-item-name">${game.shopItems[i].name}</span>
+        <span class="shop-item-quanitity">${game.shopItems[i].owned}</span>
+        <span class="shop-item-price">${game.shopItems[i].cost}</span>
+        <span class="shop-item-increase">${game.shopItems[i].increase}</span>
+        </button>`
     }
 
 }
