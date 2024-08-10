@@ -72,10 +72,17 @@ function drawShop() {
 
 drawShop();
 shop.onclick = function(e)  {
-    if(e.target.dataset.id) {
-    const id = Number(e.target.dataset.id)
+    console.log("clicked shop");
+    
+    let element = e.target;
+    while(element.parentElement){
+    if(element.dataset.id) {
+    const id = Number(element.dataset.id)
     game.purchaseShopItem(id);
     drawShop();
+    break;
+    }
+    element = element.parentElement;
     }
 }
 
