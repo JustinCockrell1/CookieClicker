@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dachsund clicker</title>
+    <title>Click to Pray</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-
+    
     <div class="flex justify-center">
+        <div id="left-sidebar" class="">
+            <img src="./images/prayer1.png"  alt="Wallahi">
+            <img src="./images/prayer2.png" alt="Don't forget your bismillah">
+        </div>
 
-        <div>
-    <h1>Blessings <span id="count" class="text-red-600">0</span></h1>
-    <h1>Rate <span id="rate" class="text-red-600">0</span></h1>
-    <button class="border-4 rounded-md p-4 bg-purple-300 hover:bg-purple-400 focus:bg-red-500" id="button">Click me!</button>
+    <div class="w-13 text-center">
+        <h1 class="fontz-0">Prayers <span id="count" class="text-red-600">0</span></h1>
+        <h1>Rate <span id="rate" class="text-red-600">0</span></h1>
+        <h1>Blessings <span id="rate" class="text-red-600">0</span></h1>
+    
+        <button class="border-4 rounded-md p-4 bg-purple-300 hover:bg-purple-400 focus:bg-red-500" id="button">Click me!</button>
+    
+        <h1>Trade with Angel</h1>
+        <div id="shop" class="flex flex-col justify-center border-4"></div>
 
-    <div id="shop"></div>
-
-</div>
     </div>
+
+        <div id="right-sidebar" class="">
+            <img src="./images/prayer3.png" alt="Worship is the best ship">
+        </div>
+
+    </div>
+
+    
     <script src="./main.js" type="module"></script>
 </body>
 </html>
