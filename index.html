@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dachsund clicker</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <canvas id="canvas"></canvas>
 
-    <h1 id="count" style="transition:all 1s">0</h1>
-    <button id="button">Click me!</button>
+    <div class="flex justify-center">
+
+        <div>
+    <h1>Prayers <span id="count" class="text-red-600">0</span></h1>
+    <br>
+    <div>
+    <button class="border-4 rounded-md p-4 bg-purple-300 hover:bg-purple-400 focus:bg-red-500" id="button">Click me!</button>
+    </div>
+</div>
+    </div>
     <script src="./main.js" type="module"></script>
 </body>
 </html>
