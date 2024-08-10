@@ -14,6 +14,10 @@ document.getElementById("button").onclick = function() {
     }
 }
 
+document.getElementById("sin").onclick = function () {
+    game.earn(-1);
+}
+
 let earningCounter = 0;
 
 function animateCount(totalElapsedTime) {
