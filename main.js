@@ -1,31 +1,78 @@
+import game from "./Game.js";
+
 let count = 0;
-let targetValue = 0;
 
 let lastElapsedTime = 0;
 
 let totalDiff = 0;
 
 document.getElementById("button").onclick = function() {
-    targetValue += 1;
-    if(count!=targetValue) {
-        totalDiff = targetValue - count;
-        window.requestAnimationFrame(animateCount)
+    game.earn(1);
+    if(count!=game.blessings) {
+        totalDiff = game.blessings - count;
+        
     }
 }
+
+let earningCounter = 0;
 
 function animateCount(totalElapsedTime) {
 
-    const elapsedTime = totalElapsedTime - lastElapsedTime;
+    const elapsedTime = (totalElapsedTime - lastElapsedTime)/1000;
     lastElapsedTime = totalElapsedTime;
+    earningCounter+=elapsedTime;
 
-    count += totalDiff / elapsedTime;
+    // console.log(elapsedTime, earningCounter);
+    
 
-    if(count<targetValue) {
-        window.requestAnimationFrame(animateCount);
+    const amount = (totalDiff * elapsedTime)/4;
+    count += (amount >= 1) ? amount : 1;
+
+    if(count<game.blessings) {
+ 
     }
-    else if(count > targetValue) {
-        count = targetValue;
+    else if(count > game.blessings) {
+        count = game.blessings;
     }
 
     document.getElementById("count").innerHTML = count.toFixed(0);
+    document.getElementById("rate").innerHTML = `${game.rate.toFixed(2)}/s`
+
+
+    if(earningCounter>=.1) {
+        game.earn(game.rate/10);
+        earningCounter=0;
+        totalDiff = game.blessings - count;
+    }
+
+
+    window.requestAnimationFrame(animateCount);
 }
+
+const shop = document.getElementById("shop");
+function drawShop() {
+    shop.innerHTML="";
+    for(let i = 0; i < game.shopItems.length; i++) {
+        shop.innerHTML+=`<button data-id=${i}>${game.shopItems[i].name} ${game.shopItems[i].owned}</button>`
+    }
+
+}
+
+
+drawShop();
+shop.onclick = function(e)  {
+    if(e.target.dataset.id) {
+    const id = Number(e.target.dataset.id)
+    game.purchaseShopItem(id);
+    drawShop();
+    }
+}
+
+window.requestAnimationFrame(animateCount);
+
+game.earn(200);
+game.purchaseShopItem(0);
+game.purchaseShopItem(0);
+game.purchaseShopItem(0);
+game.purchaseShopItem(0);
+console.log(game.rate);
