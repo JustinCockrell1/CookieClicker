@@ -53,7 +53,9 @@ const shop = document.getElementById("shop");
 function drawShop() {
     shop.innerHTML="";
     for(let i = 0; i < game.shopItems.length; i++) {
-        shop.innerHTML+=`<button data-id=${i}>${game.shopItems[i].name} ${game.shopItems[i].owned}</button>`
+        shop.innerHTML+=
+        `<button data-id=${i}><img src=${game.shopItems[i].image}><div>${game.shopItems[i].name} 
+        </br>Convert for ${game.shopItems[i].cost} blessings</br>Converted: ${game.shopItems[i].owned}<div></button>`
     }
 
 }

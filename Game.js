@@ -8,13 +8,15 @@ class Game {
                 name:"Faithful Child",
                 cost:50,
                 increase:1,
-                owned:0
+                owned:0,
+                image:"./images/shopchild.png"
             },
             {
                 name:"Pastor",
                 cost:500,
                 increase:5,
-                owned:0
+                owned:0,
+                image:"./images/shoppastor.jpg"
             }
         ];
     }
@@ -27,6 +29,7 @@ class Game {
 
 
     purchaseShopItem(i) {
+        console.log("jkhh")
         if(!this.shopItems[i])return; 
         if(this.blessings>=this.shopItems[i].cost) {
             this.blessings-=this.shopItems[i].cost;
