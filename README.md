@@ -25,8 +25,8 @@ Multiply total amounts
 ## Achievements
 
 # The game has begun
-Description "You purchased your first child"
-Happens when you purchase your first child
+Description "You converted your first faithful child"
+Happens when you convert your first child
 
 # You're very faithful
 
