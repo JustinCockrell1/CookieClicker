@@ -63,47 +63,82 @@
 
 ### Building Upgrades
 - Child
-    - Name: personal bible
+    - Name: Child's Personal Bible
+        - Upgrade:
+        - Description:
+    - Name: Children's Robe
         - Upgrade:
         - Description:
 - Youth Leader
-    - Name: new shirt
+    - Name: New Polo Shirt
         - Upgrade:
         - Description:
+    - Name: Blackmail
+        - Upgrade:
+        - Description:
+        - MAYBE IT's A SIN
 - Work Friends
-    - Name: lunch date
+    - Name: Lunch Time
+        - Upgrade:
+        - Description:
+    - Name: Group Photo
         - Upgrade:
         - Description:
 - Bible Group
-    - Name: bring cupcakes
+    - Name: Bring Cupcakes
+        - Upgrade:
+        - Description:
+    - Name: Speech
         - Upgrade:
         - Description:
 - Prayer Hotline
-    - Name: Ring em up
+    - Name: Ring 'em up
         - Upgrade:
         - Description:
+    - Name: Bomb Threat
+        - Upgrade:
+        - Description:
+        - MAYBE IT's A SIN
 - Pastor
     - Name: Offering tray
+        - Upgrade:
+        - Description:
+    - Name: Increased Payment
         - Upgrade:
         - Description:
 - Congregation
     - Name: Motivational Speaker
         - Upgrade:
         - Description:
+    - Name: Ethos, Pathos, Logos
+        - Upgrade:
+        - Description:
 - Religion
     - Name: It's a miracle
         - Upgrade:
         - Description:
+    - Name: Social Media
+        - Upgrade:
+        - Description:
 - Neighborhood
-    - Name: Hire HOA
+    - Name: Enlist HOA
+        - Upgrade:
+        - Description:
+    - Name: New Golf Course
         - Upgrade:
         - Description:
 - Partisan
     - Name: Promote Policy
         - Upgrade:
         - Description:
+    - Name: Buff Campaign
+        - Upgrade:
+        - Description:
 - Intergalactic Servants
     - Name: Additional Signal Range
+        - Upgrade:
+        - Description:
+    - Name: Additional Signal Range 2
         - Upgrade:
         - Description:
 
@@ -139,16 +174,72 @@
 
 # Achievements / Upgrade Path
 
+#### Click Path
 - Name:
-- Description:
-- PreRequisite:
-- Unlocks:
+    - Description:
+    - PreRequisite: Reach 10 prayers
+    - Unlocks: Kneel
 
-- The game has begun
-    - Description "You converted your first faithful child"
-    - Happens when you convert your first child
+- Name:
+    - Description:
+    - PreRequisite: Reach 100 prayers
+    - Unlocks: Close your eyes
 
-- You're very faithful
+- Name:
+    - Description:
+    - PreRequisite: Reach 1000 prayers
+    - Unlocks: Raise your voice
+
+- Name:
+    - Description:
+    - PreRequisite: Reach 10000 prayers
+    - Unlocks: Shake stick
+
+- Name:
+    - Description:
+    - PreRequisite: Reach 100000 prayers
+    - Unlocks: Incense
+
+- Name:
+    - Description:
+    - PreRequisite: Reach 1000000 prayers
+    - Unlocks: Prostrate
+
+- Name:
+    - Description:
+    - PreRequisite: Reach 10000000 prayers
+    - Unlocks: Tears
+
+- Name:
+    - Description:
+    - PreRequisite: Reach 100000000 prayers
+    - Unlocks: Visit Temple
+
+- Name:
+    - Description:
+    - PreRequisite: Reach 1000000000 prayers
+    - Unlocks: Offer sacrifice
+
+#### Buildings Path
+- Name: Leader
+    - Description:
+    - PreRequisite: Buy 50 Child
+    - Unlocks: Child's Personal Bible
+
+- Name: The masses
+    - Description:
+    - PreRequisite: Buy 500 Children
+    - Unlocks: Children's Robe
+
+- Name: Turn Tables
+    - Description:
+    - PreRequisite: Buy 50 Youth Leader
+    - Unlocks: New Polo Shirt
+
+- Name: A little Payback
+    - Description:
+    - PreRequisite: Buy 500 Youth Leader
+    - Unlocks: Blackmail
 
 
 ##### Sin button
