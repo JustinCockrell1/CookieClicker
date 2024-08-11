@@ -51,14 +51,14 @@ game.addShopItem(
 
 game.addShopItem(
     document.getElementById("upgrades"), 
-    new ShopUpgrade("Pastor","pastor",5, (game)=>{
+    new ShopUpgrade("Pastor","pastor",5,"./images/shopchild.png", (game)=>{
         game.clickRate*=2;
     })
 );
 
 game.addShopItem(
     document.getElementById("upgrades"), 
-    new ShopUpgrade("Click better","makes you click better",50, (game)=>{
+    new ShopUpgrade("Click better","makes you click better",50,"./images/shopchild.png", (game)=>{
         game.rate+=10;
     })
 );
