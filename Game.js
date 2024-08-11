@@ -23,8 +23,26 @@ class Game {
 
 
         this.upgrades = [
-            
+
         ]
+    }
+
+    addShopItem(element, shopItem) {
+
+   
+        console.log("hello");
+        const item = shopItem.getElement()
+        
+        item.onclick = (ev)=>{
+            shopItem.onClick(this);
+        }
+        element.appendChild(item);
+    }
+
+    setRate(rate) {
+        this.rate = rate;
+
+        document.getElementById("rate").innerHTML = this.rate;
     }
 
 

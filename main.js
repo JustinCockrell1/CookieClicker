@@ -1,4 +1,5 @@
 import game from "./Game.js";
+import ShopItem from "./game/ShopItem.js";
 
 let count = 0;
 
@@ -91,6 +92,8 @@ shop.onclick = function(e)  {
 }
 
 window.requestAnimationFrame(animateCount);
+
+game.addShopItem(document.getElementById("buildings"), new ShopItem("Faithful Child", 50, 1, "./images/shopchild.png"));
 
 game.earn(200);
 game.purchaseShopItem(0);
