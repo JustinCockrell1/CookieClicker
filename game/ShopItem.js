@@ -19,6 +19,7 @@ export default class ShopItem {
     onPurchase(game) {
         game.setRate(game.rate+this.increase);
         this.owned++;
+        this.cost*=0.1;
         this.updateElement();
     }
 
