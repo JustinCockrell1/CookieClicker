@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .upgrade {
     position: relative;
     display: inline-block;
@@ -44,10 +49,12 @@
 .clicker-image img {
     width: 8rem;
     max-width: 8rem;
+    transform: rotate3d(0,1,0.5,45deg)
 }
 
 .clicker-image {
-    background-color: green;
+    background-color: white;
+    border: 10px solid green;
     border-radius: 50%;
     width: 8rem;
     height: 8rem;
@@ -83,9 +90,36 @@
 .shop-item {
     display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .shop-item img {
     width: 100px;
     height: 100px;
+}
+
+.item-description .item-cost {
+    color: goldenrod;
+    font-size: 2rem;
+}
+
+.item-description {
+    font-size: 1.5rem;
+}
+
+.item-description h1 {
+    font-size: 2rem;
+}
+
+
+
+.item-quantity {
+    font-size: 4rem;
+}
+
+body {
+    background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
