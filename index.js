@@ -7,10 +7,46 @@ const clickerButton = document.getElementById("clicker-button");
 game.addShopItem(
     document.getElementById("buildings"),
      new ShopItem("Faithful Child",50, 1, "./images/shopchild.png")
-    );
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Youth Leader", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Work Friends", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Bible Group", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Prayer Hotline", 500, 5, "./images/shoppastor.jpg")
+);
 game.addShopItem(
     document.getElementById("buildings"), 
     new ShopItem("Pastor", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Congregation", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Religion", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Neighborhood", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Partisan", 500, 5, "./images/shoppastor.jpg")
+);
+game.addShopItem(
+    document.getElementById("buildings"), 
+    new ShopItem("Intergalactic Servants", 500, 5, "./images/shoppastor.jpg")
 );
 
 game.addShopItem(
