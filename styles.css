@@ -5,11 +5,19 @@
 
 .upgrade {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     max-width: 100px;
     width: 75px;
     height: 75px;
     background-color: red;
+    margin: 1rem;
+}
+
+#upgrades {
+    background-color: lightblue;
+    text-align: left;
+    max-height: 120px;
+    overflow-y: scroll;
 }
 
 .upgrade:hover {
@@ -77,10 +85,15 @@
 
 .header-title {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     color: goldenrod;
+    background-color: rgba(127,127,127, 0.5);
+}
+
+#blessings {
+    font-size: 5rem;
 }
 
 .header-image img {
@@ -92,6 +105,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .shop-item img {
@@ -122,4 +136,10 @@ body {
     background-image: url("./images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#shop {
+    background-color: burlywood;
+    max-height: 95vh;
+    overflow-y: scroll;
 }
