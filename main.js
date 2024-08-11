@@ -7,7 +7,7 @@ let lastElapsedTime = 0;
 let totalDiff = 0;
 
 document.getElementById("button").onclick = function() {
-    game.earn(1);
+    game.pray();
     if(count!=game.blessings) {
         totalDiff = game.blessings - count;
         

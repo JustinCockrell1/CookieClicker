@@ -2,6 +2,7 @@ class Game {
     constructor() {
         this.blessings = 0;
         this.rate = 0;
+        this.clickRate = 1;
 
         this.shopItems = [
             {
@@ -19,8 +20,17 @@ class Game {
                 image:"./images/shoppastor.jpg"
             }
         ];
+
+
+        this.upgrades = [
+            
+        ]
     }
 
+
+    pray() {
+        this.earn(this.clickRate);
+    }
 
     earn(amount) {
         this.blessings+=amount;
@@ -36,6 +46,10 @@ class Game {
             this.rate+=this.shopItems[i].increase;
             this.shopItems[i].owned++;
         }
+    }
+
+    purchaseUpgrade(i) {
+
     }
 }
 
