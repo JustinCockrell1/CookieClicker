@@ -1,3 +1,4 @@
+import parseNumber from "./game/parseNumber.js";
 class Game {
     constructor() {
         this.blessings = 0;
@@ -42,7 +43,7 @@ class Game {
     setRate(rate) {
         this.rate = rate;
 
-        document.getElementById("rate").innerHTML = this.rate;
+        document.getElementById("rate").innerHTML = parseNumber(this.rate);
     }
 
 
@@ -69,6 +70,8 @@ class Game {
     purchaseUpgrade(i) {
 
     }
+
+    
 }
 
 const game = new Game();

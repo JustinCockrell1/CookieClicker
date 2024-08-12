@@ -1,32 +1,33 @@
 import game from "./Game.js";
 import ShopItem from "./game/ShopItem.js";
 import ShopUpgrade from "./game/ShopUpgrade.js";
+import parseNumber from "./game/parseNumber.js";
 
 const clickerButton = document.getElementById("clicker-button");
 
 game.addShopItem(
     document.getElementById("buildings"),
-     new ShopItem("Faithful Child",50, 1, "./images/shopchild.png")
+     new ShopItem("Faithful Child",5, 1000000, "./images/shopchild.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Youth Leader", 500, 5, "./images/youthleader.webp")
+    new ShopItem("Youth Leader", 5, 1000000000, "./images/youthleader.webp")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Work Friends", 500, 5, "./images/workfriends.png")
+    new ShopItem("Work Friends", 500, 1000000000000, "./images/workfriends.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Bible Group", 500, 5, "./images/biblegroup.png")
+    new ShopItem("Bible Group", 500, 1000000000000000, "./images/biblegroup.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Prayer Hotline", 500, 5, "./images/hotline.jpeg")
+    new ShopItem("Prayer Hotline", 500, 1000000000000000000, "./images/hotline.jpeg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Pastor", 500, 5, "./images/shoppastor.jpg")
+    new ShopItem("Pastor", 500, 1000000000000000000000, "./images/shoppastor.jpg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
@@ -95,6 +96,7 @@ game.addShopItem(
     document.getElementById("upgrades"), 
     new ShopUpgrade("Visit Temple","Increases the amount per click",5,"./images/temple.avif", (game)=>{
         game.clickRate*=2;
+        
     })
 );
 game.addShopItem(
@@ -104,24 +106,15 @@ game.addShopItem(
     })
 );
 
-function parseNumber(number) {
-    let word = "";
-    if(number > 999 && number < 1000000) {
-        number = number/1000;
-        word = "thousand";
-    };
-    number = number.toFixed(3);
-    let displayNumber = number + word;
-    return displayNumber;
-}
+
 
 clickerButton.onclick = function() {
     game.earn(game.clickRate);
-    document.getElementById("blessings").innerHTML = parseNumber(game.blessings);
+    document.getElementById("blessings").innerHTML = game.blessings;
 }
 
 window.setInterval(()=>{
 
     game.earn(game.rate);
-    document.getElementById("blessings").innerHTML = parseNumber(game.blessings);
+    document.getElementById("blessings").innerHTML = game.blessings;
 }, 1000)
