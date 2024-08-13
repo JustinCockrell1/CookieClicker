@@ -1,4 +1,5 @@
-import parseNumber from "./parseNumber.js";
+
+import dparse from "./dparse.js"
 export default class ShopItem {
     constructor(name, cost, increase, image) {
         this.cost = cost;
@@ -12,15 +13,15 @@ export default class ShopItem {
 
     onClick(game) {
         if(game.blessings>=this.cost) {
-            this.onPurchase(game)
             game.blessings-=this.cost;
+            this.onPurchase(game)
         }
     }
 
     onPurchase(game) {
         game.setRate(game.rate+this.increase);
         this.owned++;
-        this.cost+= this.cost*100;
+        this.cost+= this.cost*0.22;
         this.updateElement();
     }
 
@@ -31,7 +32,7 @@ export default class ShopItem {
 
             <div class="item-description">
             <h1>${this.name}</h1>
-            Convert for <span class="item-cost">${this.cost}</span> blessings
+            Convert for <span class="item-cost">${dparse(this.cost)}</span> blessings
             </div>
             <div class="item-quantity">
             ${this.owned}
@@ -44,7 +45,7 @@ export default class ShopItem {
 
         this.element.querySelector(".item-description").innerHTML = `
                 <h1>${this.name}</h1>
-        Convert for <span class="item-cost">${parseNumber(this.cost)}</span> blessings
+        Convert for <span class="item-cost">${dparse(this.cost)}</span> blessings
         </div>`
 
         this.element.querySelector(".item-quantity").innerHTML = `<div class="item-quantity">

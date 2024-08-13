@@ -1,33 +1,56 @@
 import game from "./Game.js";
 import ShopItem from "./game/ShopItem.js";
 import ShopUpgrade from "./game/ShopUpgrade.js";
-import parseNumber from "./game/parseNumber.js";
+import dparseNumber from "./game/dparseNumber.js";
+import dparseUnit from "./game/dparseUnit.js";
+import data from "./prayerList.json" with {type:"json"}
+
+
 
 const clickerButton = document.getElementById("clicker-button");
+const prayerList = document.getElementById("prayers")
+const prayersButton = document.getElementById("prayers-button")
+
+let show = false;
+prayersButton.onclick = function () {
+    if(show) {
+        show = false;
+        prayerList.classList.add("cropped")
+    }
+    else{
+        show = true;
+        prayerList.classList.remove("cropped")
+    }
+}
+
+function updateBlessings() {
+    document.getElementById("blessings").innerHTML = 
+    dparseNumber(game.blessings) + `<span>${dparseUnit(game.blessings)}</span>`;
+}
 
 game.addShopItem(
     document.getElementById("buildings"),
-     new ShopItem("Faithful Child",5, 1000000, "./images/shopchild.png")
+     new ShopItem("Faithful Child",5, 100, "./images/shopchild.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Youth Leader", 5, 1000000000, "./images/youthleader.webp")
+    new ShopItem("Youth Leader", 5, 200, "./images/youthleader2.webp")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Work Friends", 500, 1000000000000, "./images/workfriends.png")
+    new ShopItem("Work Friends", 500, 1000, "./images/workfriends.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Bible Group", 500, 1000000000000000, "./images/biblegroup.png")
+    new ShopItem("Bible Group", 500, 1000, "./images/biblegroup.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Prayer Hotline", 500, 1000000000000000000, "./images/hotline.jpeg")
+    new ShopItem("Prayer Hotline", 500, 1000, "./images/hotline.jpeg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Pastor", 500, 1000000000000000000000, "./images/shoppastor.jpg")
+    new ShopItem("Pastor", 500, 10000, "./images/shoppastor.jpg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
@@ -106,15 +129,28 @@ game.addShopItem(
     })
 );
 
+document.getElementById("buildings").onclick = function() {
+    updateBlessings();
+}
 
+document.getElementById("upgrades").onclick = function() {
+    updateBlessings();
+}
 
 clickerButton.onclick = function() {
     game.earn(game.clickRate);
-    document.getElementById("blessings").innerHTML = game.blessings;
+    updateBlessings();
+    let temp = prayerList.innerHTML;
+    prayerList.innerHTML = `<p>${data[Math.floor(Math.random()*(Math.pow(10, Math.ceil(Math.random()*3))))]}</p>` + temp;
 }
 
 window.setInterval(()=>{
 
     game.earn(game.rate);
-    document.getElementById("blessings").innerHTML = game.blessings;
+    if(game.rate>0) {
+        let temp = prayerList.innerHTML;
+    prayerList.innerHTML = `<p>${data[Math.floor(Math.random()*(Math.pow(10, Math.ceil(Math.random()*3))))]}</p>` + temp;
+    }
+    updateBlessings();
+    
 }, 1000)

@@ -1,4 +1,5 @@
-import parseNumber from "./game/parseNumber.js";
+
+import dparse from "./game/dparse.js";
 class Game {
     constructor() {
         this.blessings = 0;
@@ -29,9 +30,6 @@ class Game {
     }
 
     addShopItem(element, shopItem) {
-
-   
-        console.log("hello");
         const item = shopItem.getElement()
         
         item.onclick = (ev)=>{
@@ -43,7 +41,7 @@ class Game {
     setRate(rate) {
         this.rate = rate;
 
-        document.getElementById("rate").innerHTML = parseNumber(this.rate);
+        document.getElementById("rate").innerHTML = dparse(this.rate);
     }
 
 

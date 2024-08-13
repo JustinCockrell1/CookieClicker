@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+.hidden {
+    display:none;
+}
+.active {
+    border: 4px solid red
+}
+
+#upgrades {
+    background-color: lightblue;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: visible;
+    position: relative;
+}
+
 .upgrade {
     position: relative;
     /* display: inline-block; */
@@ -11,9 +27,10 @@
     height: 75px;
     background-color: red;
     margin: 1rem;
+    overflow-x: visible;
 }
 
-.upgrade img {
+.upgrade .upgrade-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,29 +38,84 @@
     height: 75px;
 }
 
-#upgrades {
-    background-color: lightblue;
-    text-align: left;
-    max-height: 120px;
-    overflow-y: scroll;
-}
-
 .upgrade:hover {
     cursor: pointer;
 }
 
 .upgrade-title {
-
+    
 }
 
-.upgrade-description {
+#upgrades-info {
+    height:70px;
+    width:100%;
+    /* position:absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    background-color: blue;
+    padding-top:5px;
+    padding-left:5px;
+}
+#upgrades-info .display-image {
+    display:block;
+    width: 50px;
+    height: 50px;
+    /* position:relative;
+    top:11px;
+    left:11px; */
+}
+.upgrades-info-container {
+    display: flex;
+}
+.upgrades-info-container > * {
+    /* margin:right; */
+}
+.upgrades-info-container div {
+    display: flex;
+    flex-direction: column;
+}
+
+#prayer-list {
+    background-color: antiquewhite;
+    overflow-y: scroll;
+    width:100%;
+}
+#prayers {
+    overflow-y: hidden;
+}
+#prayers-button {
+    width:90%;
+    margin:.2rem;
+}
+.cropped {
+    height:33px;
+}
+
+.upgrade-display {
+ display: flex;
+ width:100px;
+ 
  position: absolute;
- top: 0;
- transform: translateY(-100%);
+ top: -25px;
+ left:-25px;
+ /* left:-500%; */
+ transform: translateX();
  visibility: hidden;
+ background-color: aqua;
+ padding:.5rem;
+ display: none;
+}
+.upgrade-display .display-image {
+    display:block;
+    width: 75px;
+    height: 75px;
 }
 
-.upgrade:hover .upgrade-description {
+.upgrade:hover .upgrade-display {
+    /* visibility: visible; */
+    /* display:block; */
+}
+.upgrade-display:hover .upgrade-display {
     visibility: visible;
 }
 
@@ -63,8 +135,8 @@
 }
 
 .clicker-image img {
-    width: 8rem;
-    max-width: 8rem;
+    width: 10rem;
+    max-width: 10rem;
     transform: rotate3d(0,1,0.5,45deg)
 }
 
@@ -72,8 +144,8 @@
     background-color: white;
     border: 10px solid green;
     border-radius: 50%;
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 10rem;
     padding: 2rem;
     cursor: pointer;
     user-select: none;
@@ -86,6 +158,10 @@
     align-items: center;
     flex-direction: column;
 }
+.clicker-section #ctp {
+    color: white;
+    padding:.3rem;
+}
 
 .header-image {
     position: relative;
@@ -96,12 +172,15 @@
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    color: goldenrod;
-    background-color: rgba(127,127,127, 0.5);
+    color: rgb(121, 92, 16);
+    background-color: rgba(127,127,127, 0.3);
 }
 
 #blessings {
     font-size: 5rem;
+}
+#blessings span {
+    font-size: 3rem;
 }
 
 .header-image img {
