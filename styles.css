@@ -75,6 +75,10 @@
     flex-direction: column;
 }
 
+.shop-section-title {
+    color: white;
+}
+
 #prayer-list {
     background-color: antiquewhite;
     overflow-y: scroll;

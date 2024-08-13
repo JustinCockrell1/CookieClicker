@@ -22,6 +22,9 @@ class Game {
                 image:"./images/shoppastor.jpg"
             }
         ];
+        this.achievements = [
+            
+        ]
 
 
         this.upgrades = [
@@ -36,6 +39,15 @@ class Game {
             shopItem.onClick(this);
         }
         element.appendChild(item);
+    }
+    
+    addAchievement(element, achievement) {
+        const item2 = achievement.getElement()
+
+        item2.onclick = (ev)=>{
+            achievement.onClick(this);
+        }
+        element.appendChild(item2);
     }
 
     setRate(rate) {

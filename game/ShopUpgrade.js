@@ -1,12 +1,13 @@
 
 import dparse from "./dparse.js"
 export default class ShopUpgrade {
-    constructor(name,desc,cost,image, onPurchase) {
+    constructor(name,desc,cost,image,id, onPurchase) {
         this.name=name;
         this.owned = 0;
         this.description = desc;
         this.cost = cost;
         this.image = image;
+        this.id= id;
 
         this.active = false;
 
@@ -76,7 +77,9 @@ export default class ShopUpgrade {
         
 
         const element = document.createElement("button");
+        element.classList.add(this.id);
         element.classList.add("upgrade");
+        element.classList.add("hidden")
         element.innerHTML = `
         <img class="upgrade-image" src="${this.image}"/>
         <div class ="upgrade-display">
