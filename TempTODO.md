@@ -1,6 +1,6 @@
 # TO DO
 <!-- - design and wire upgrades and upgrades display -->
-- link upgrades to achievement path
+<!-- - link upgrades to achievement path -->
 <!-- - prayer list -->
 - aesthetic redesign
 - animations

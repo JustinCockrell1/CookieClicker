@@ -1,12 +1,12 @@
 export default class Achievement {
-    constructor(name,desc,target,amount,tag,unlock) {
+    constructor(name,desc,target,amount,unlock) {
         this.name = name;
         this.description = desc;
         this.target = target;
         this.amount = amount;
         this.unlock = unlock;
         this.unlocked = false;
-        this.tag = tag;
+        // this.tag = tag;
 
         this.element=this.createElement();
     }
@@ -24,13 +24,13 @@ export default class Achievement {
     }
 
     updateElement(target){
-        console.log(this.unlocked)
+        // console.log(this.unlocked)
         
         if(!this.unlocked) {
-            console.log("should be here")
+            // console.log("should be here")
             this.target = target;
             if(this.target < this.amount) {
-                console.log(this.target, this.amount)
+                // console.log(this.target, this.amount)
             }
             else {
                 // console.log(this.element)

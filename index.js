@@ -30,15 +30,15 @@ function updateBlessings() {
 
 game.addShopItem(
     document.getElementById("buildings"),
-     new ShopItem("Faithful Child",5, 100, "./images/shopchild.png")
+     new ShopItem("Faithful Child",5, 1, "./images/shopchild.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Youth Leader", 5, 200, "./images/youthleader2.webp")
+    new ShopItem("Youth Leader", 5, 10, "./images/youthleader2.webp")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Work Friends", 500, 1000, "./images/workfriends.png")
+    new ShopItem("Work Friends", 500, 100, "./images/workfriends.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
@@ -46,31 +46,31 @@ game.addShopItem(
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Prayer Hotline", 500, 1000, "./images/hotline.jpeg")
+    new ShopItem("Prayer Hotline", 500, 10000, "./images/hotline.jpeg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Pastor", 500, 10000, "./images/shoppastor.jpg")
+    new ShopItem("Pastor", 500, 100000, "./images/shoppastor.jpg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Congregation", 500, 5, "./images/congregation.png")
+    new ShopItem("Congregation", 500, 100000, "./images/congregation.png")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Religion", 500, 5, "./images/religion.jpeg")
+    new ShopItem("Religion", 500, 1000000, "./images/religion.jpeg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Neighborhood", 500, 5, "./images/neighborhood.jpg")
+    new ShopItem("Neighborhood", 500, 10000000, "./images/neighborhood.jpg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Partisan", 500, 5, "./images/partisan.jpg")
+    new ShopItem("Partisan", 500, 100000000, "./images/partisan.jpg")
 );
 game.addShopItem(
     document.getElementById("buildings"), 
-    new ShopItem("Intergalactic Servants", 500, 5, "./images/alien.jpg")
+    new ShopItem("Intergalactic Servants", 500, 1000000000, "./images/alien.jpg")
 );
 
 game.addShopUpgrade(
@@ -131,28 +131,76 @@ game.addShopUpgrade(
 
 
 game.addAchievement(document.getElementById("achievements"), 
-    new Achievement("Pman","You have clicked more",game.blessings,100,()=>{
+    new Achievement("Fervent","You know how to pray seriously",game.blessings,100,()=>{
         // console.log(id1)
         document.querySelector(".id1").classList.remove("hidden");
         console.log("upgrade revealed")
     })
 );
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("Peaceful","Your prayers can be healing and tranquil",game.blessings,1000,()=>{
+        // console.log(id1)
+        document.querySelector(".id2").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("Passionate","You can pray with emotion",game.blessings,10000,()=>{
+        // console.log(id1)
+        document.querySelector(".id3").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("Violent","Fight for what you pray for",game.blessings,100000,()=>{
+        // console.log(id1)
+        document.querySelector(".id4").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("Sensational","Holy rituals are useful",game.blessings,1000000,()=>{
+        // console.log(id1)
+        document.querySelector(".id5").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("Committed","Pride is something that should be sacrificed",game.blessings,10000000,()=>{
+        // console.log(id1)
+        document.querySelector(".id6").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("Life-Changing","Prayer can move mountains",game.blessings,100000000,()=>{
+        // console.log(id1)
+        document.querySelector(".id7").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("The lord's house","The Holy Land",game.blessings,1000000000,()=>{
+        // console.log(id1)
+        document.querySelector(".id8").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
+game.addAchievement(document.getElementById("achievements"), 
+    new Achievement("All in","One way. One God.",game.blessings,10000000000,()=>{
+        // console.log(id1)
+        document.querySelector(".id9").classList.remove("hidden");
+        console.log("upgrade revealed")
+    })
+);
 
-// game.addAchievement(document.getElementById("achievements"), 
-//     new Achievement("Clicker","You have clicked a lot",game.blessings,1000,()=>{
-//         // console.log(id1)
-//         id1.classList.remove("hidden");
-//         console.log("upgrade revealed")
-//     })
-// );
-
-
+// THIS ONLY WORKS FOR BLESSINGS ACHIEVEMENTS!
 function updateAchievements() {
     for (let i=0; i < game.achievements.length; i++){
-        console.log(game.achievements[i]);
-        console.log("TARGET:" + game.achievements[i].target)
-        console.log("ACTUAL:" + game.blessings )
-        game.updateAchievement(game.achievements[i], game.achievements[i].target);
+        // console.log(game.achievements[i]);
+        // console.log("TARGET:" + game.achievements[i].target)
+        // console.log("ACTUAL:" + game.blessings )
+        game.updateAchievement(game.achievements[i], game.blessings); // this is where I entered the game.blessings specific target
     }
     
 }

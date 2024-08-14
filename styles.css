@@ -75,9 +75,7 @@
     flex-direction: column;
 }
 
-.shop-section-title {
-    color: white;
-}
+
 
 #prayer-list {
     background-color: antiquewhite;
@@ -94,7 +92,8 @@
 
 #achievements-div {
     background-color: rgb(165, 118, 42);
-    height:20vh;
+    height:12vh;
+    overflow-y:scroll;
 }
 #achievements {
     background-color: azure;
@@ -245,6 +244,13 @@ body {
 
 #shop {
     background-color: burlywood;
-    height: 80vh;
-    overflow-y: scroll;
+    height: 88vh;
+    /* overflow-y: scroll; */
+}
+.shop-section-title {
+    color: white;
+}
+#buildings {
+    max-height:80%;
+    overflow-y:scroll;
 }
