@@ -83,6 +83,7 @@
     width:100%;
 }
 #prayers {
+    min-height: 33px;
     overflow-y: hidden;
 }
 #prayers-button {

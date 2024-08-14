@@ -10,15 +10,17 @@ const clickerButton = document.getElementById("clicker-button");
 const prayerList = document.getElementById("prayers")
 const prayersButton = document.getElementById("prayers-button")
 
-let show = false;
+let show = true;
 prayersButton.onclick = function () {
     if(show) {
         show = false;
         prayerList.classList.add("cropped")
+        prayersButton.innerHTML = "Expand prayer list"
     }
     else{
         show = true;
         prayerList.classList.remove("cropped")
+        prayersButton.innerHTML = "Crop prayer list"
     }
 }
 
@@ -228,11 +230,17 @@ document.addEventListener("click", ()=>{
 })
 
 window.setInterval(()=>{
-    game.earn(game.rate);
     if(game.rate>0) {
         let temp = prayerList.innerHTML;
     prayerList.innerHTML = `<p>${data[Math.floor(Math.random()*(Math.pow(10, Math.ceil(Math.random()*3))))]}</p>` + temp;
     }
+}, 1000)
+
+console.log(game.blessings)
+
+window.setInterval(()=>{
+    game.earn(game.rate/10);
+    // console.log(game.rate/10)
     updateBlessings();
     updateAchievements();
-}, 1000)
+}, 100)
