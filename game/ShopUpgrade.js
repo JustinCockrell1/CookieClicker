@@ -42,10 +42,10 @@ export default class ShopUpgrade {
             if(game.blessings >= this.cost){
                 document.getElementById("upgrades-info").innerHTML = "Click an upgrade to see info"
 
-                console.log("purchased")
-                console.log(this.cost)
+                // console.log("purchased")
+                // console.log(this.cost)
                 game.blessings-=this.cost;
-                console.log("New blessings: "+ game.blessings)
+                // console.log("New blessings: "+ game.blessings)
                 this.hideElement();
                 this.onPurchase(game);
             }

@@ -27,27 +27,38 @@ class Game {
         ]
 
 
-        this.upgrades = [
+        this.shopUpgrades = [
 
         ]
     }
 
     addShopItem(element, shopItem) {
         const item = shopItem.getElement()
-        
+        // console.log(item)
         item.onclick = (ev)=>{
             shopItem.onClick(this);
         }
         element.appendChild(item);
     }
-    
-    addAchievement(element, achievement) {
-        const item2 = achievement.getElement()
-
+    addShopUpgrade(element, shopUpgrade) {
+        const item2 = shopUpgrade.getElement()
+        // console.log(item)
         item2.onclick = (ev)=>{
-            achievement.onClick(this);
+            shopUpgrade.onClick(this);
         }
         element.appendChild(item2);
+        this.shopUpgrades.push(shopUpgrade)
+    }
+    
+    addAchievement(element, achievement) {
+        const item3 = achievement.getElement()
+        // console.log(item2)
+        element.appendChild(item3);
+        this.achievements.push(achievement);
+    }
+    updateAchievement(achievement,target){
+        // console.log("updated Achievement GAME")
+        achievement.updateElement(target);
     }
 
     setRate(rate) {
