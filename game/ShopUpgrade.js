@@ -30,10 +30,10 @@ export default class ShopUpgrade {
                 </div>
 
                 <div>
-                    <p>Upgrade: ${this.name} Cost: ${this.cost}</p>
-                    <p>${this.description}</p>
+                    <p class="upgrades-info-cost"><span class="upgrades-info-name">${this.name}</span> Cost: ${this.cost}</p>
+                    <p class="upgrades-info-description">${this.description}</p>
                 </div>
-                <p>Click again to purchase</p>
+                <p class="click-again">Click again to purchase</p>
             </div>
             
             `;

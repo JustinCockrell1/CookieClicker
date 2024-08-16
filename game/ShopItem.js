@@ -27,7 +27,7 @@ export default class ShopItem {
     }
 
     increaseCost() {
-        this.cost+= this.cost*0.22;
+        this.cost+= this.cost*0.18;
     }
 
     createElement() {

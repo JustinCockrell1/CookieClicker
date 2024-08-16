@@ -1,6 +1,7 @@
 :root {
-    --primary: #d44141;
-    --secondary: #dc9c9c;
+    --primary: #914F1E;
+    /* --secondary: #6d91f1; */
+    --secondary: #F7DCB9;
 }
 
 * {
@@ -17,6 +18,9 @@ body {
     /* align-items: center; */
     /* justify-content: center; */
 }
+h1, h2, h3, span, p {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .hidden {
     display:none;
@@ -29,23 +33,25 @@ body {
 }
 
 .header {
+    position:fixed;
     text-align: center;
-    width:100%;
+    width:50%;
     align-items: center;
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* background-image: url("images/godshand.jpg"); */
+    z-index:99;
     /* position:fixed; */
     
 }
-.header-image {
-    /* position: relative; */
-    width:100%;
-    /* z-index: -99999; */
-}
 .header-title {
-    background-image: url("images/godshand.jpg");
-    width:400px;
+    width:320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     /* position: absolute;
     top: 20%;
     left: 50%;
@@ -53,8 +59,19 @@ body {
     color: var(--secondary);
     background-color: var(--primary); */
 }
+.header-image {
+    position: relative;
+    width:100%;
+    height: 160px;
+    /* z-index: -99999; */
+    background-image: url("./images/godshand.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
 .header-image img {
-    /* width: 60%; */
+    width: 100%;
+    /* max-height: 100px; */
 }
 .header-placeholder {
     display:none;
@@ -68,9 +85,23 @@ body {
 }
 .blessings {
     font-size: 4rem;
+    /* text-decoration: underline; */
 }
-.blessings span {
+.header-title hr {
+    border: 3px solid black;
+    border-radius: 3px;
+    width:80%;
+}
+.header-title span {
     font-size: 2rem;
+}
+#godshand-div {
+    background-image: url("./images/godshand.jpg");
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    width:100%;
+    height:16rem;
+    background-position: center top;
 }
 
 
@@ -86,7 +117,7 @@ body {
 
 .container section {
     width: 50%;
-    height:fit-content;
+    /* height:fit-content; */
     /* min-width: 400px; */
     max-width:100%;
     text-align: center;
@@ -99,14 +130,24 @@ body {
 }
 
 .clicker-image {
-    background-color: var(--secondary);
-    border: 10px solid green;
+    background-color: #f7f7f7;
+    border: 10px solid #b4b4b4;
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
     padding: 2rem;
     cursor: pointer;
     user-select: none;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, .5);
+    margin:1rem 0;
+    
+}
+.click-animate {
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration: 100s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-fill-mode: backwards;
 }
 
 .clicker-section {
@@ -115,6 +156,10 @@ body {
     height: 100%;
     align-items: center;
     flex-direction: column;
+    background-image: url("images/tallchurch.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size:100%;
 }
 .clicker-section #ctp {
     color: var(--secondary);
@@ -125,14 +170,19 @@ body {
 
 
 #prayer-list {
-    background-color: var(--secondary);
-    overflow-y: scroll;
+    
+    /* overflow-y: scroll; */
     width:100%;
+    color: goldenrod;
+    opacity:60%;
+    /* color: rgba(0, 0, 0, .3); */
+    /* background-image: url("images/godshand.jpg"); */
 }
 #prayers {
     min-height: 33px;
-    max-height:300px;
-    overflow-y: scroll;
+    height:21rem;
+    overflow-y: hidden;
+    
 }
 /* #prayers .scroll {
     overflow-y: scroll;
@@ -140,12 +190,23 @@ body {
 #prayers-button {
     width:90%;
     margin:.2rem;
+    display: none;
 }
 
+
+.shop-section {
+    max-height: 100vh;
+    height:100vh;
+}
 #shop {
     background-color: var(--primary);
-    height: 88vh;
+    height:85%;
     /* overflow-y: scroll; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 100%;
 }
 
 .shop-item {
@@ -161,27 +222,28 @@ body {
 }
 .item-description .item-cost {
     color: goldenrod;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .item-description {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding:0 2rem;
 }
 .item-description h1 {
     font-size: 2rem;
 }
 .item-quantity {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 #achievements-div {
     background-color: var(--primary);
-    height:12vh;
+    height:15%;
     /* overflow-y:hidden; */
 }
 #achievements {
     max-height: 60%;
     background-color: var(--secondary);
-    padding:3px;
+    /* padding:3px; */
     overflow-y:scroll;
 }
 /* #achievements > * { */
@@ -223,16 +285,27 @@ body {
 .upgrade-title {
     
 }
-
+#upgrades-div {
+    /* padding:2px; */
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 #upgrades-info {
     height:70px;
-    width:98%;
+    width:93%;
     /* position:absolute; */
     /* top: 0; */
     /* left: 0; */
-    background-color: var(--primary);
-    padding-top:5px;
-    padding-left:5px;
+    background-color: var(--secondary);
+    /* padding-top:5px; */
+    /* padding-left:5px; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }
 #upgrades-info .display-image {
     display:block;
@@ -251,6 +324,20 @@ body {
 .upgrades-info-container div {
     display: flex;
     flex-direction: column;
+}
+.upgrades-info-cost {
+    font-size: 1.1rem;
+}
+.upgrades-info-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.upgrades-info-description {
+    font-size: 1.1rem;
+}
+.click-again{
+    width:4rem;
+    font-size: 1rem;
 }
 .upgrade-display {
     display: flex;
@@ -279,17 +366,46 @@ body {
     visibility: visible;
 }
 
-.shop-section-title {
+.section-title {
+    font-size: 2rem;
     color: white;
+    padding:.5rem;
+}
+.shop-section-title {
+    font-size: 1.5rem;
+    color:var(--primary);
+    padding: .3rem;
+    /* background-color: #DEAC80; */
+    background-color: var(--secondary);
+    width:fit-content;
+    margin:auto;
+}
+.prayer-helpers {
+    color: black;
+    background-color: white;
+    margin-top:.3rem;
 }
 #buildings {
-    max-height:50%;
+    max-height:60%;
     overflow-y:scroll;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
+    .shop-section {
+        height:fit-content;
+        max-height: 1000vh;
+    }
+    #buildings {
+        height:fit-content;
+        max-height: 1000vh;
+    }
+    #shop {
+        height:fit-content;
+        max-height: 1000vh;
+    }
     .header{
         position:fixed;
+        width:100%;
     }
     .container section {
         width:100%;
@@ -297,4 +413,67 @@ body {
     .header-placeholder {
         display:flex;
     }
+    #prayers{
+        height:19rem;
+    }
+    .item-description .item-cost {
+        color: goldenrod;
+        font-size: 1rem;
+    }
+    .item-description {
+        font-size: 1rem;
+        padding:0 1rem;
+    }
+    .item-description h1 {
+        font-size: 1.5rem;
+    }
+    .item-quantity {
+        font-size: 2rem;
+    }
+
+    .clicker-section {
+        background-size: 130%;
+    }
+    .clicker-image img {
+        width: 9rem;
+        max-width: 9rem;
+        transform: rotate3d(0,1,0.5,45deg)
+    }
+    .clicker-image {
+        border: 10px solid #b4b4b4;
+        border-radius: 50%;
+        width: 9rem;
+        height: 9rem;
+        padding: 2rem;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 3px 5px 5px rgba(0, 0, 0, .5);
+        margin:1rem 0;
+        
+    }
+
+    html:not([data-scroll='0']) {
+        .header{
+            box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+            /* background-image: url("./images/godshand.jpg"); */
+            
+            background-color: rgba(218, 165, 32, 0.7);
+        }
+    }
 }
+
+/* .classname {
+    
+  }
+  
+  @-webkit-keyframes cssAnimation {
+    from {
+      -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    }
+    to {
+      -webkit-transform: rotate(3600deg) scale(1) skew(0deg) translate(0px);
+    }
+     to {
+        -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
+    } 
+} */
