@@ -14,10 +14,13 @@ export default class ShopUpgrade {
         this.element=this.createElement();
 
         this.onPurchase = onPurchase;
+
+        this.purchased = false;
+        this.display = false;
     }
 
     onClick(game) {
-        console.log(game.blessings)
+        console.log(game.blessings);
         if(this.active == false){
             this.active = true;
             document.getElementById("upgrades-info").innerHTML = `
@@ -48,6 +51,8 @@ export default class ShopUpgrade {
                 // console.log("New blessings: "+ game.blessings)
                 this.hideElement();
                 this.onPurchase(game);
+                this.purchased = true;
+                this.display = false;
             }
             else {
                 document.getElementById("upgrades-info").innerHTML = 

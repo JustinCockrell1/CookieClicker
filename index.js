@@ -27,21 +27,56 @@ prayersButton.onclick = function () {
 }
 
 function saveGame() {
-    localStorage.setItem("childOwned")
-    localStorage.setItem("save", game.blessings)
-}
-function loadGame() {
+    // localStorage.setItem("childOwned")
+    // localStorage.setItem("save", game.blessings);
+
+    const storageObject = {
+        shopItems:[],
+        shopUpgrades:[],
+        rate:game.rate,
+        clickRate:game.clickRate,
+        blessings:game.blessings,
+        achievements:[],
+    };
     for(let i = 0; i < game.shopItems.length; i++){
-        for(let j = 0; j<game.shopItems[i].owned; j++){
-            game.shopItems[i].onPurchase(game);
-        }
+        storageObject.shopItems[i] = game.shopItems[i].owned;
     }
     for(let i = 0; i < game.shopUpgrades.length; i++){
-        for(let j = 0; j<game.shopUpgrades[i].owned; j++){
-            game.shopUpgrades[i].onPurchase(game);
-        }
+        storageObject.shopUpgrades[i] = game.shopUpgrades[i].display;
     }
-    game.blessings= Number(localStorage.getItem("save"));
+    for(let i =0; i < game.achievements.length; i++) {
+        storageObject.achievements[i] = game.achievements[i].unlocked;
+    }
+
+
+    localStorage.setItem("save", JSON.stringify(storageObject));
+
+}
+function loadGame() {
+    const data = JSON.parse(localStorage.getItem("save"));
+    game.blessings = data.blessings;
+    game.setRate(data.rate);
+    game.clickRate = data.clickRate;
+
+    for(let i = 0; i < data.shopItems.length; i++){
+        game.shopItems[i].owned = data.shopItems[i];
+
+        for(let j = 0; j < game.shopItems[i].owned; j++) {
+            game.shopItems[i].increaseCost();
+        }
+
+        game.shopItems[i].updateElement();
+    }
+    for(let i = 0; i < data.shopUpgrades.length; i++){
+        game.shopUpgrades[i].display = data.shopUpgrades[i];
+        if(game.shopUpgrades[i].display)
+        document.querySelector(`.id${i+1}`).classList.remove("hidden");
+
+    }
+    for(let i = 0; i < data.achievements.length; i++){
+        game.achievements[i].unlocked = data.achievements[i];
+        game.achievements[i].element.classList.remove("hidden");
+    }
 }
 
 
@@ -49,6 +84,8 @@ function loadGame() {
 function updateBlessings() {
     document.getElementById("blessings").innerHTML = 
     dparseNumber(game.blessings) + `<span>${dparseUnit(game.blessings)}</span>`;
+
+    
 }
 
 
@@ -157,6 +194,7 @@ game.addShopUpgrade(
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Fervent","You know how to pray seriously",game.blessings,100,()=>{
         // console.log(id1)
+        game.shopUpgrades[0].display = true;
         document.querySelector(".id1").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -164,6 +202,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Peaceful","Your prayers can be healing and tranquil",game.blessings,1000,()=>{
         // console.log(id1)
+        game.shopUpgrades[1].display = true;
         document.querySelector(".id2").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -171,6 +210,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Passionate","You can pray with emotion",game.blessings,10000,()=>{
         // console.log(id1)
+        game.shopUpgrades[2].display = true;
         document.querySelector(".id3").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -178,6 +218,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Violent","Fight for what you pray for",game.blessings,100000,()=>{
         // console.log(id1)
+        game.shopUpgrades[3].display = true;
         document.querySelector(".id4").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -185,6 +226,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Sensational","Holy rituals are useful",game.blessings,1000000,()=>{
         // console.log(id1)
+        game.shopUpgrades[4].display = true;
         document.querySelector(".id5").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -192,6 +234,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Committed","Pride is something that should be sacrificed",game.blessings,10000000,()=>{
         // console.log(id1)
+        game.shopUpgrades[5].display = true;
         document.querySelector(".id6").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -199,6 +242,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("Life-Changing","Prayer can move mountains",game.blessings,100000000,()=>{
         // console.log(id1)
+        game.shopUpgrades[6].display = true;
         document.querySelector(".id7").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -206,6 +250,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("The lord's house","The Holy Land",game.blessings,1000000000,()=>{
         // console.log(id1)
+        game.shopUpgrades[7].display = true;
         document.querySelector(".id8").classList.remove("hidden");
         console.log("upgrade revealed")
     })
@@ -213,6 +258,7 @@ game.addAchievement(document.getElementById("achievements"),
 game.addAchievement(document.getElementById("achievements"), 
     new Achievement("All in","One way. One God.",game.blessings,10000000000,()=>{
         // console.log(id1)
+        game.shopUpgrades[8].display = true;
         document.querySelector(".id9").classList.remove("hidden");
         console.log("upgrade revealed")
     })

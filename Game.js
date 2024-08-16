@@ -7,20 +7,6 @@ class Game {
         this.clickRate = 1;
 
         this.shopItems = [
-            {
-                name:"Faithful Child",
-                cost:50,
-                increase:1,
-                owned:0,
-                image:"./images/shopchild.png"
-            },
-            {
-                name:"Pastor",
-                cost:500,
-                increase:5,
-                owned:0,
-                image:"./images/shoppastor.jpg"
-            }
         ];
         this.achievements = [
             
@@ -39,6 +25,7 @@ class Game {
             shopItem.onClick(this);
         }
         element.appendChild(item);
+        this.shopItems.push(shopItem)
     }
     addShopUpgrade(element, shopUpgrade) {
         const item2 = shopUpgrade.getElement()

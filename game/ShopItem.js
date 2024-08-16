@@ -22,8 +22,12 @@ export default class ShopItem {
         game.setRate(game.rate+this.increase);
         game.blessings-=this.cost;
         this.owned++;
-        this.cost+= this.cost*0.22;
+        this.increaseCost();
         this.updateElement();
+    }
+
+    increaseCost() {
+        this.cost+= this.cost*0.22;
     }
 
     createElement() {
