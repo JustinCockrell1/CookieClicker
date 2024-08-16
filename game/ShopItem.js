@@ -13,13 +13,14 @@ export default class ShopItem {
 
     onClick(game) {
         if(game.blessings>=this.cost) {
-            game.blessings-=this.cost;
+            
             this.onPurchase(game)
         }
     }
 
     onPurchase(game) {
         game.setRate(game.rate+this.increase);
+        game.blessings-=this.cost;
         this.owned++;
         this.cost+= this.cost*0.22;
         this.updateElement();

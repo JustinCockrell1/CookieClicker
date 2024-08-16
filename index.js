@@ -15,14 +15,36 @@ prayersButton.onclick = function () {
     if(show) {
         show = false;
         prayerList.classList.add("cropped")
+        // prayerList.classList.remove("scroll")
         prayersButton.innerHTML = "Expand prayer list"
     }
     else{
         show = true;
         prayerList.classList.remove("cropped")
+        // prayerList.classList.add("scroll")
         prayersButton.innerHTML = "Crop prayer list"
     }
 }
+
+function saveGame() {
+    localStorage.setItem("childOwned")
+    localStorage.setItem("save", game.blessings)
+}
+function loadGame() {
+    for(let i = 0; i < game.shopItems.length; i++){
+        for(let j = 0; j<game.shopItems[i].owned; j++){
+            game.shopItems[i].onPurchase(game);
+        }
+    }
+    for(let i = 0; i < game.shopUpgrades.length; i++){
+        for(let j = 0; j<game.shopUpgrades[i].owned; j++){
+            game.shopUpgrades[i].onPurchase(game);
+        }
+    }
+    game.blessings= Number(localStorage.getItem("save"));
+}
+
+
 
 function updateBlessings() {
     document.getElementById("blessings").innerHTML = 
@@ -229,6 +251,7 @@ document.addEventListener("click", ()=>{
     updateAchievements();
 })
 
+// update prayer list
 window.setInterval(()=>{
     if(game.rate>0) {
         let temp = prayerList.innerHTML;
@@ -243,4 +266,6 @@ window.setInterval(()=>{
     // console.log(game.rate/10)
     updateBlessings();
     updateAchievements();
+    saveGame();
 }, 100)
+loadGame();
