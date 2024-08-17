@@ -131,7 +131,7 @@ function loadGame() {
     }
     for(let i = 0; i < data.achievements.length; i++){
         game.achievements[i].unlocked = data.achievements[i];
-        game.achievements[i].element.classList.remove("hidden");
+        if(game.achievements[i].unlocked)game.achievements[i].element.classList.remove("hidden");
     }
 }
 
