@@ -36,7 +36,7 @@ class Game {
         element.appendChild(item2);
         this.shopUpgrades.push(shopUpgrade)
     }
-    
+
     addAchievement(element, achievement) {
         const item3 = achievement.getElement()
         // console.log(item2)

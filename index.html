@@ -3,73 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click to Pray</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles2.css"> -->
+    <script src="./index.js" type="module" defer></script>
 </head>
 <body>
-    
-    <div class="flex justify-center">
-        <div id="left-sidebar" class="w-8">
-            <img src="./images/prayer1.png"  alt="Wallahi">
-            <img src="./images/prayer2.png" alt="Don't forget your bismillah">
-            <img src="./images/prayer3.png" alt="Worship is the best ship">
-        </div>
 
-    <div class="w-13 text-center">
-        <h1 class="fontz-0">Blessings <span id="count" class="text-red-600">0</span></h1>
-        <h1>Rate <span id="rate" class="text-red-600">0</span></h1>
-        <h1>Blessings <span id="rate" class="text-red-600">0</span></h1>
-    
-        <button class="border-4 rounded-md p-4 bg-purple-300 hover:bg-purple-400 focus:bg-red-500" id="button">Click to Pray</button>
+   
+
+    <div class="container">
+
         
-        <button class="border p-4 rounded-md bg-black text-white hover:bg-darkred-400" id="sin">Sin</button>
 
-        <h1>Trade with Angel</h1>
+        <section name="clicker" class="clicker-section">
+            
+            <div class="header">
+                <!-- <div class="header-image"> -->
+                    
+                <!-- </div> -->
+                <div class="header-title">
+                    <p class="blessings">Blessings</p>
+                    <hr>
+                    <span id="blessings">0</span>
+                    <h3><span id="rate">0</span> per second</h3>
+                </div>
+        
+            </div>
+            <div id="godshand-div">
+                <!-- <img id="godshand" src="images/godshand.jpg" alt=""> -->
+            </div>
+            
+            <div id="prayer-list">
+                <!-- <h1 id="prayer">Those prayed for</h1> -->
+                <button id="prayers-button">Crop prayer list</button>
+                <div id="prayers">
 
-        <div id="upgrades">
-            <!-- <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
+                </div>
             </div>
-            <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
-            </div>
-            <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
-            </div>
-            <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
-            </div>
-            <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
-            </div>
-            <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
-            </div>
-            <div class="upgrade">
-                <h1 class="upgrade-title">Bible Study</h1>
-                <p class="upgrade-description">Double the effectiveness of your prayers</p>
-            </div> -->
-        </div>
-        <div id="shop" class="flex flex-col justify-center border-4"></div>
 
+            <!-- <h1 id="ctp">Click to pray</h1> -->
+            <div id="clicker-button" class="clicker-image">
+                <img id="click-image" src="./images/prayer2.png" alt="Don't forget your bismillah">
+            </div>
+
+        </section>
+        <!-- <section name="items" class="items-section">
+            
+        </section> -->
+
+        <section name="shop" class="shop-section">
+            
+            <div id="achievements-div">
+                <h1 class="section-title">Achievements</h1>
+                <div id="achievements">
+            
+                </div>
+            </div>
+        
+            <div id="shop">
+                <h1 class="section-title">Shop</h1>
+                <div id="upgrades-div">
+                    <h1 class="shop-section-title">Upgrades</h1>
+                    <div id="upgrades-info">Click an Upgrade to see info</div>
+                    <!-- <div id="upgrades-info-placeholder"></div> -->
+                    <div id="upgrades">
+
+                    </div>
+                </div>
+                <h1 class="shop-section-title prayer-helpers">Prayer Helpers</h1>
+                <div id="buildings">
+                
+            </div>
+            
+        </section>
     </div>
-
-        <div id="right-sidebar" class="">
-            <img src="./images/flames.jpg" alt="Eternal Fire">
-            <img src="./images/satan.jpg" alt="Satan is watching too">
-            <img src="./images/flames.jpg" alt="Burning">
-        </div>
-
-    </div>
-
-    
-    <script src="./main.js" type="module"></script>
 </body>
 </html>
